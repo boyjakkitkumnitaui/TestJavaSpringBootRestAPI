@@ -1,0 +1,44 @@
+ {
+     "employees":{
+        "namethai": "ชื่อไทย2",
+        "lastnamethai": "นามสกุล2",
+        "nameeng": "testname2",
+        "lastnameeng": "testlast2",
+        "idcardnumber": "2222",
+        "idemployees": "22222",
+        "idposition": 2,
+        "address":[
+            {
+                "addressno": "ชื่อไทย2",
+                "swine": "นามสกุล2",
+                "alleyway": "testname2",
+                "road": "testlast2",
+                "subdistrict": "2222",
+                "district": "22222",
+                "province": "2",
+                "postal_code": "2",
+                "phone_number": "2",
+                "mobile_phone": "2",
+                "email": "2"
+            },
+            {
+                "addressno": "ที่อยู่2",
+                "swine": "ที่อยู่2",
+                "alleyway": "ที่อยู่2",
+                "road": "ที่อยู่2",
+                "subdistrict": "ที่อยู่2",
+                "district": "ที่อยู่2",
+                "province": "ที่อยู่2",
+                "postal_code": "ที่อยู่2",
+                "phone_number": "ที่อยู2",
+                "mobile_phone": "ที่อยู่2",
+                "email": "ที่อยู่2"
+            }
+        ],
+        "position":[
+            {
+                "nameposition": "BackEnd"
+            }
+        ]
+    }   
+}
