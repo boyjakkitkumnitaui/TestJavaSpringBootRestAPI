@@ -18,7 +18,7 @@ public class Address {
 
     @Id
     @GeneratedValue
-    private long adid;
+    private Long id;
     private String  addressno;
     private String  swine;
     private String  alleyway;

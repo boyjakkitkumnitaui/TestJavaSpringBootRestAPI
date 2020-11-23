@@ -22,47 +22,18 @@ public class Employees {
     
     @Id
     @GeneratedValue
-    private Long idemployees;
+    private Long id;
     private String namethai;
     private String lastnamethai;
     private String nameeng;
     private String lastnameeng;
     private String idcardnumber;
-    private Long idposition;
 
     @OneToMany(targetEntity = Address.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "ep_fk",referencedColumnName = "idemployees")
+    @JoinColumn(name = "ep_fk",referencedColumnName = "id")
     private List<Address> address;
 
     @OneToMany(targetEntity = Position.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "ep_fk_posi",referencedColumnName = "idemployees")
+    @JoinColumn(name = "ep_fk_posi",referencedColumnName = "id")
     private List<Position> position;
-
-    public Long getid(){
-        return idemployees;
-    }
-
-    public String namethai(){
-        return namethai;
-    }
-
-    public String lastnamethai(){
-        return lastnamethai;
-    }
-
-    public String nameeng(){
-        return nameeng;
-    }
-
-    public String lastnameeng(){
-        return lastnameeng;
-    }
-
-    public String idcardnumber(){
-        return idcardnumber;
-    }
-
-    public Long idposition(){
-        return idposition;
-    }
 }

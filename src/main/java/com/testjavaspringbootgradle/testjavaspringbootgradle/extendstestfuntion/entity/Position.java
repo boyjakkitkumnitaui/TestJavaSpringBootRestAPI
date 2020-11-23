@@ -18,11 +18,8 @@ import lombok.ToString;
 public class Position {
     @Id
     @GeneratedValue
-    private Long idposition;
+    private Long id;
     private String nameposition;
-    
-
-    public Long getid(){
-        return idposition;
-    }
+    private String nameposition2;
+    private String nameposition22;
 }

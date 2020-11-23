@@ -36,6 +36,7 @@ public class GetdataController {
     
     @Autowired
     Addressrepository addressrepository;
+    
     @GetMapping("/Employees")
     public List<Employees> findAllEmployees() {
         return employeesrepository.findAll();
@@ -44,7 +45,7 @@ public class GetdataController {
     @GetMapping("/Employees/{id}")
     private Optional<Employees> getEmployees(@PathVariable("id") Long id) 
     {  
-        return employeesrepository.findById(id);  
+        return employeesrepository.findById(id);
     }
 
     @PostMapping("/Employees")  
