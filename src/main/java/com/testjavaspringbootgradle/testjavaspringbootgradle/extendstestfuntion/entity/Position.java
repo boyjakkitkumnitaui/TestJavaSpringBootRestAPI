@@ -2,6 +2,7 @@ package com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
@@ -16,10 +17,9 @@ import lombok.ToString;
 @ToString
 @Entity
 public class Position {
+
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nameposition;
-    private String nameposition2;
-    private String nameposition22;
 }

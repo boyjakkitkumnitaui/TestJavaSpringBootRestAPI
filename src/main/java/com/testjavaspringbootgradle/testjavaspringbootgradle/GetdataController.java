@@ -5,9 +5,12 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
 import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.dto.DataEmployeesRequest;
+import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.entity.Address;
 import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.entity.Employees;
+import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.entity.Position;
 import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.repository.Addressrepository;
 import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.repository.Employeesrepository;
+import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.repository.Positionrepository;
 import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.service.Employeesservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 public class GetdataController {
@@ -37,9 +41,12 @@ public class GetdataController {
     @Autowired
     Addressrepository addressrepository;
     
+    @Autowired
+    Positionrepository positionrepository;
+
     @GetMapping("/Employees")
     public List<Employees> findAllEmployees() {
-        return employeesrepository.findAll();
+        return (List<Employees>)employeesrepository.findAll();
     }
 
     @GetMapping("/Employees/{id}")
@@ -48,10 +55,21 @@ public class GetdataController {
         return employeesrepository.findById(id);
     }
 
-    @PostMapping("/Employees")  
-    public Employees saveDataorUpdate(@RequestBody DataEmployeesRequest request)   
+    @PostMapping("/Employees")
+    public Employees saveDataorUpdate(@RequestBody Employees employees)   
     {   
-        return employeesrepository.save(request.getEmployees());  
+        List<Address> addresses = employees.getAddress();
+        addresses = addressrepository.saveAll(addresses);
+        
+        List<Position> positiones = employees.getPosition();
+        positiones = positionrepository.saveAll(positiones);
+
+        employees = employeesrepository.save(employees);
+        employees.setAddress(addresses);
+        employees.setPosition(positiones);
+        employeesrepository.save(employees);
+        System.out.println("eeeee:"+ employees);
+        return employees;
     }
 
     @DeleteMapping("/Employeesdelete")  
@@ -59,4 +77,5 @@ public class GetdataController {
     {  
        employeesrepository.delete(request.getEmployees());  
     }  
+
 }

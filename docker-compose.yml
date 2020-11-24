@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0
+    ports:
+      - 3306:3306
+    volumes:
+      - "/var/lib/docker/volumes/cff77f32b0019a3bc66100182b68e28237c1e9bc65466a915d5edf42e67be00f/_data"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Testjavaspringbootapi
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8081:80
+    environment:
+      PMA_PASSWORD: root
+      PMA_USER: root
+      PMA_HOSTS: mysql

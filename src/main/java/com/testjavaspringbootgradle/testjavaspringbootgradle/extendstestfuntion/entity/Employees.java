@@ -2,12 +2,12 @@ package com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +21,7 @@ import lombok.ToString;
 public class Employees {
     
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String namethai;
     private String lastnamethai;
@@ -29,11 +29,9 @@ public class Employees {
     private String lastnameeng;
     private String idcardnumber;
 
-    @OneToMany(targetEntity = Address.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "ep_fk",referencedColumnName = "id")
+    @OneToMany
     private List<Address> address;
 
-    @OneToMany(targetEntity = Position.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "ep_fk_posi",referencedColumnName = "id")
+    @OneToMany
     private List<Position> position;
 }
