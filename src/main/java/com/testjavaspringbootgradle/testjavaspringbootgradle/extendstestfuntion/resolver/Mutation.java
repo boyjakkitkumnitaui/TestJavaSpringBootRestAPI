@@ -1,11 +1,8 @@
 package com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.resolver;
 
-import javax.transaction.Transactional;
-
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.entity.Employees;
 import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.entity.Position;
-import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.entity.Position.UpdateProfileInput;
 import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.repository.Employeesrepository;
 import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.repository.Positionrepository;
 
@@ -26,11 +23,12 @@ public class Mutation implements GraphQLMutationResolver {
         return positionrepository.save(position);
     }
 
-    // public Employees createEmployees(String namethai,String lastnamethai,String nameeng,String lastnameeng,String idcardnumber) {
-    //     Employees employees = new Employees(null, namethai, lastnamethai, nameeng, lastnameeng, idcardnumber, null,null);
-    //     employeesrepository.save(employees);
-    //     return employees;
-    // }
+    public Employees createEmployees(Employees input) {
+        System.out.println("Test: "+ input);
+        // System.out.println("Test: "+ input.getAddress());
+        employeesrepository.save(input);
+        return input;
+    }
     
     public Position updatePosition(Position input) {
         Position position = positionrepository.findById(input.getId()).orElseThrow(PositionNotFoundException::new);
@@ -47,6 +45,11 @@ public class Mutation implements GraphQLMutationResolver {
     }
 
     public class PositionNotFoundException extends RuntimeException {
+
+        /**
+         *
+         */
+        private static final long serialVersionUID = 1L;
 
     }
 }

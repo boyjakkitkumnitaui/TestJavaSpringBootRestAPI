@@ -11,7 +11,8 @@ import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.
 import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.repository.Addressrepository;
 import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.repository.Employeesrepository;
 import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.repository.Positionrepository;
-import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.service.Employeesservice;
+import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.service.EmployeesService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,7 +34,7 @@ public class GetdataController {
     }
 
     @Autowired
-    Employeesservice employeesservice;
+    EmployeesService employeesservice;
 
     @Autowired
     Employeesrepository employeesrepository;

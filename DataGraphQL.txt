@@ -30,10 +30,20 @@
 #     deletePosition(id: 2)
 # }
 
-mutation updatePosition($input: UpdatePositionInput!){
-    updatePosition(input: $input){
-        id
-        nameposition
-    }
+# mutation updatePosition($input: UpdatePositionInput!){
+#     updatePosition(input: $input){
+#         id
+#         nameposition
+#     }
 
+# }
+
+mutation createEmployees($input: CreateEmployeesInput!){
+    createEmployees(input: $input){
+        namethai
+        lastnamethai
+        nameeng
+        lastnameeng
+        idcardnumber
+    }
 }

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class Employeesservice {
+public class EmployeesService {
     @Autowired
     Employeesrepository employeesrepository;
     public void createEmployees(Employees employees){

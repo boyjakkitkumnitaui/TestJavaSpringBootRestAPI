@@ -5,10 +5,22 @@ type Employees {
   nameeng:String
   lastnameeng:String
   idcardnumber:String
-  #address:[Address]
+  address:[Address]
 }
+
 type Address {
-    id:ID
+    id:ID!
+    addressno:String
+    swine:String
+    alleyway:String
+    road:String
+    subdistrict:String
+    province:String
+    postal_code:String
+    phone_number:String
+    mobile_phone:String
+    email:String
+
 }
 
 type Position {
@@ -19,4 +31,12 @@ type Position {
 input UpdatePositionInput {
     id: Long!
     nameposition: String
+}
+
+input CreateEmployeesInput {
+    namethai:String!
+    lastnamethai:String!
+    nameeng:String!
+    lastnameeng:String!
+    idcardnumber:String!
 }
