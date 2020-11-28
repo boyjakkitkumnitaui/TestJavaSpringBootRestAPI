@@ -59,10 +59,10 @@ public class GetdataController {
     public Employees saveDataorUpdate(@RequestBody Employees employees)   
     {   
         List<Address> addresses = employees.getAddress();
-        addresses = addressrepository.saveAll(addresses);
+        // addresses = addressrepository.saveAll(addresses);
         
         List<Position> positiones = employees.getPosition();
-        positiones = positionrepository.saveAll(positiones);
+        // positiones = positionrepository.save(positiones);
 
         employees = employeesrepository.save(employees);
         employees.setAddress(addresses);

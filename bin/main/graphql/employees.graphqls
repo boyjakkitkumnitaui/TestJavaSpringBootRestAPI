@@ -1,0 +1,22 @@
+type Employees {
+  id:ID!
+  namethai:String
+  lastnamethai:String
+  nameeng:String
+  lastnameeng:String
+  idcardnumber:String
+  #address:[Address]
+}
+type Address {
+    id:ID
+}
+
+type Position {
+  id:ID!
+  nameposition:String
+}
+
+input UpdatePositionInput {
+    id: Long!
+    nameposition: String
+}

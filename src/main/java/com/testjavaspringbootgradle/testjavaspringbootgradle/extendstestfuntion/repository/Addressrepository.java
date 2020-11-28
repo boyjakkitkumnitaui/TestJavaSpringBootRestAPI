@@ -2,8 +2,8 @@ package com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion
 
 import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.entity.Address;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface Addressrepository extends JpaRepository<Address ,Long> {
+public interface Addressrepository extends CrudRepository<Address ,Long> {
     
 }

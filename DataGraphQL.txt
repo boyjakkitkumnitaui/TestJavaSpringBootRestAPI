@@ -1,0 +1,39 @@
+# query{
+#     findAllEmployees{
+#         namethai
+#         lastnamethai
+#         # address{
+#         #   id
+#         # }
+#     }
+# }
+
+# mutation {
+#     createPosition(nameposition: "BackEnd")
+#         {
+#             nameposition
+#         }
+# }
+
+# mutation {
+#     createEmployees(namethai:"สวัสดี",lastnamethai:"สวัสดีนามสกุล",nameeng:"Hi",lastnameeng:"HiLastname",idcardnumber:"11111111111")
+#         {
+#             namethai
+#             lastnamethai
+#             nameeng
+#             lastnameeng
+#             idcardnumber
+#         }
+# }
+
+# mutation{
+#     deletePosition(id: 2)
+# }
+
+mutation updatePosition($input: UpdatePositionInput!){
+    updatePosition(input: $input){
+        id
+        nameposition
+    }
+
+}

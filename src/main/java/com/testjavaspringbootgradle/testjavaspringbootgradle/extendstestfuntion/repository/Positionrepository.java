@@ -2,8 +2,7 @@ package com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion
 
 import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.entity.Position;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface Positionrepository extends JpaRepository<Position ,Long>{
-    
+public interface Positionrepository extends CrudRepository<Position ,Long>{
 }

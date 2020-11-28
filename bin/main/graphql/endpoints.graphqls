@@ -1,0 +1,18 @@
+schema{
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+	findAllEmployees: [Employees]
+	findAllAddress: [Address]
+}
+
+type Mutation {
+	#createEmployees(namethai:String!,lastnamethai:String!,nameeng:String!,lastnameeng:String!,idcardnumber:String!): Employees
+	createPosition(nameposition: String!): Position
+	updatePosition(input: UpdatePositionInput!): Position
+	deletePosition(id: Long!): Long
+	
+}
+

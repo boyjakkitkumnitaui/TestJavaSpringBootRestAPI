@@ -1,12 +1,28 @@
 package com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.service;
 
+import javax.transaction.Transactional;
+
+import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.entity.Employees;
+import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.repository.Employeesrepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class Employeesservice {
-    // @Autowired
-    // Employeesrepository employeesrepository;
+    @Autowired
+    Employeesrepository employeesrepository;
+    public void createEmployees(Employees employees){
+        employeesrepository.save(employees); 
+    }
+
+    @Transactional
+    public Employees createEmployees(String namethai, String lastnamethai, String nameeng, String lastnameeng, String idcardnumber) {
+        Employees employees = new Employees(null, namethai, lastnamethai, nameeng, lastnameeng, idcardnumber, null,
+                null);
+       return employeesrepository.save(employees);
+    }
     // //getting all student records  
     // public List<Employees> getAllEmployees()   
     // {  
