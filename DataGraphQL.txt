@@ -1,10 +1,26 @@
 # query{
 #     findAllEmployees{
+#         id
 #         namethai
 #         lastnamethai
-#         # address{
-#         #   id
-#         # }
+#         address{
+#             id
+#             addressno
+#             swine
+#             alleyway
+#             road
+#             subdistrict
+#             district
+#             province
+#             postal_code
+#             phone_number
+#             mobile_phone
+#             email
+#         }
+#         position{
+#             id
+#             nameposition
+#         }
 #     }
 # }
 
@@ -38,12 +54,54 @@
 
 # }
 
-mutation createEmployees($input: CreateEmployeesInput!){
-    createEmployees(input: $input){
+# mutation createEmployees($input: CreateEmployeesInput!){
+#     createEmployees(input: $input){
+#         namethai
+#         lastnamethai
+#         nameeng
+#         lastnameeng
+#         idcardnumber
+#         address{
+#             addressno
+#             swine
+#             alleyway
+#             road
+#             subdistrict
+#             district
+#             province
+#             postal_code
+#             phone_number
+#             mobile_phone
+#             email
+#         }
+#     }
+# }
+
+mutation updateEmployees($input: UpdateEmployeesInput!){
+    updateEmployees(input: $input){
+        id
         namethai
         lastnamethai
         nameeng
         lastnameeng
         idcardnumber
+        address{
+            id
+            addressno
+            swine
+            alleyway
+            road
+            subdistrict
+            district
+            province
+            postal_code
+            phone_number
+            mobile_phone
+            email
+        }
+        position{
+            id
+            nameposition
+        }
     }
 }

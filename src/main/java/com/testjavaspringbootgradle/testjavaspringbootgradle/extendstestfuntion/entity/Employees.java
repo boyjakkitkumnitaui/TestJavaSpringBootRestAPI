@@ -2,6 +2,7 @@ package com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,9 +28,9 @@ public class Employees {
     private String lastnameeng;
     private String idcardnumber;
 
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     private List<Address> address;
 
-    @OneToMany
+    @OneToMany(cascade= {CascadeType.ALL})
     private List<Position> position;
 }

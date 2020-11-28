@@ -6,5 +6,4 @@ import com.testjavaspringbootgradle.testjavaspringbootgradle.extendstestfuntion.
 import org.springframework.data.repository.CrudRepository;
 
 public interface Employeesrepository extends CrudRepository<Employees ,Long> {
-    
 }

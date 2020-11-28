@@ -1,0 +1,29 @@
+{
+    "input":{
+        "id":27,
+        "namethai":"dddd",
+        "lastnamethai":"dddd",
+        "nameeng":"dddd",
+        "lastnameeng":"dddd",
+        "idcardnumber":"dddd"
+        ,
+        "address":{
+            "id":14,
+            "addressno": "ชื่อไทย",
+            "swine":"String",
+            "alleyway":"alleyway",
+            "road":"String",
+            "subdistrict":"String",
+            "district":"district",
+            "province":"String",
+            "postal_code":"String",
+            "phone_number":"String",
+            "mobile_phone":"String",
+            "email":"String"
+        },
+        "position":{
+            "id": 4,
+            "nameposition": "FrontEnd"
+        }
+    }
+}

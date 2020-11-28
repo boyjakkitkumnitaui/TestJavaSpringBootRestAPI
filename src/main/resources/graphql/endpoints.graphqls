@@ -10,8 +10,11 @@ type Query {
 
 type Mutation {
 	createEmployees(input: CreateEmployeesInput!): Employees
+	updateEmployees(input: UpdateEmployeesInput!): Employees
 	createPosition(nameposition: String!): Position
 	updatePosition(input: UpdatePositionInput!): Position
 	deletePosition(id: Long!): Long
+	deleteEmployees(id: Long!): Long
+	deleteAddress(id: Long!): Long
 }
 

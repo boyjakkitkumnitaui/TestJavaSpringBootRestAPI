@@ -6,6 +6,7 @@ type Employees {
   lastnameeng:String
   idcardnumber:String
   address:[Address]
+  position:[Position]
 }
 
 type Address {
@@ -15,6 +16,7 @@ type Address {
     alleyway:String
     road:String
     subdistrict:String
+    district:String
     province:String
     postal_code:String
     phone_number:String
@@ -33,10 +35,46 @@ input UpdatePositionInput {
     nameposition: String
 }
 
+input CreateorUpdateAddressInput {
+    id:Long
+    addressno:String
+    swine:String
+    alleyway:String
+    road:String
+    subdistrict:String
+    district:String
+    province:String
+    postal_code:String
+    phone_number:String
+    mobile_phone:String
+    email:String
+}
+
+input CreateorUpdatePositionInput {
+    id:Long
+    nameposition: String
+}
+
 input CreateEmployeesInput {
     namethai:String!
     lastnamethai:String!
     nameeng:String!
     lastnameeng:String!
     idcardnumber:String!
+    address: [CreateorUpdateAddressInput!]
+    position:[CreateorUpdatePositionInput!]
 }
+
+
+input UpdateEmployeesInput {
+    id:Long!
+    namethai:String!
+    lastnamethai:String!
+    nameeng:String!
+    lastnameeng:String!
+    idcardnumber:String!
+    address: [CreateorUpdateAddressInput!]
+    position:[CreateorUpdatePositionInput!]
+}
+
+
